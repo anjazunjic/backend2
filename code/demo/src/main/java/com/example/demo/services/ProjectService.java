@@ -4,6 +4,7 @@ import com.example.demo.models.*;
 import com.example.demo.repositories.*;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -131,4 +132,36 @@ public class ProjectService {
         return result;
     }
 
+
+
+    // INSERT
+    public int scheduleAnInterview(Interview interview){
+        int result = this._regruterRepository.scheduleAnInterview(interview);
+        return result;
+    }
+    //GET CANDIDATE BY ID
+    public List<Interview> getAllInterviewsByCandidateUsername(String candidate_username)  {
+        List<Interview> result= this._regruterRepository.getAllInterviewsByCandidateUsername(candidate_username);
+        return result;
+    }
+
+    public List<Interview> getAllInterviewsByRegruterUsername(String regruter_username){
+        List<Interview>  result= this._regruterRepository.getAllInterviewsByRegruterUsername(regruter_username);
+        return result;
+    }
+
+     public List<CandidateInterview> getCandidateForInterviews(String regruter_username){
+         List<CandidateInterview> result = this._regruterRepository.getCandidateForInterviews(regruter_username);
+         return result;
+     }
+
+    public List<Interview> getInterviewsByDate(String regruter_username, Date datum){
+        List<Interview>  result= this._regruterRepository.getInterviewsByDate(regruter_username,datum);
+        return result;
+    }
+
+    public int updateLink(int interviewID,String link){
+        int result = this._regruterRepository.updateLink(interviewID,link);
+        return result;
+    }
 }
