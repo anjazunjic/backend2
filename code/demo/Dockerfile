@@ -1,4 +1,4 @@
- Koristimo official OpenJDK 17 Alpine image (manji, brži)
+# Koristimo official OpenJDK 17 Alpine image (manji, brži)
 FROM openjdk:17-jdk-alpine
 
 # Radni direktorijum unutar container-a
