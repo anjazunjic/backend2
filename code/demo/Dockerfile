@@ -1,6 +1,6 @@
 FROM openjdk:17-jdk-alpine
 
-WORKDIR /code/demo
+WORKDIR /app
 
 COPY code/demo/demo-0.0.1-SNAPSHOT.jar .
 
