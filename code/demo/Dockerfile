@@ -1,14 +1,9 @@
-# Koristi oficijalni OpenJDK image
-FROM openjdk:17-jdk-slim
+FROM openjdk:17-jdk-alpine
 
-# Postavi radni direktorijum unutar kontejnera
-WORKDIR /app
+WORKDIR /code/demo
 
-# Kopiraj JAR fajl iz lokalnog direktorijuma u Docker konteiner
-COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
+COPY code/demo/demo-0.0.1-SNAPSHOT.jar .
 
-# Izloži port koji aplikacija koristi (po defaultu Spring Boot koristi port 8080)
 EXPOSE 8080
 
-# Pokreni aplikaciju
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+CMD ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
